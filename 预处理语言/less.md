@@ -28,6 +28,7 @@
 				    color:red;}
     .redBorder-func(){
 				    border:1px solid red;}
+                    
     /*红色文字和边框 通过func 混合*/
     .redFontBorder-func {
 		    .redFont-funct();
