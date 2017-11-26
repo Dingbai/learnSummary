@@ -1,0 +1,912 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>vue常见问题及解决方法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../常见封装/" />
+    
+    
+    <link rel="prev" href="vuex.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../node.js/">
+            
+                <a href="../node.js/">
+            
+                    
+                    node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../node.js/es6.html">
+            
+                <a href="../node.js/es6.html">
+            
+                    
+                    es6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../node.js/node.html">
+            
+                <a href="../node.js/node.html">
+            
+                    
+                    node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../node.js/commend.html">
+            
+                <a href="../node.js/commend.html">
+            
+                    
+                    commend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../node.js/promise笔记.html">
+            
+                <a href="../node.js/promise笔记.html">
+            
+                    
+                    promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="VueBassic.html">
+            
+                <a href="VueBassic.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="axios笔记.html">
+            
+                <a href="axios笔记.html">
+            
+                    
+                    axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="vuex.html">
+            
+                <a href="vuex.html">
+            
+                    
+                    vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="vue常见问题及解决方法.html">
+            
+                <a href="vue常见问题及解决方法.html">
+            
+                    
+                    vue常见问题及解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../常见封装/">
+            
+                <a href="../常见封装/">
+            
+                    
+                    常见封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../常见封装/各种底层.html">
+            
+                <a href="../常见封装/各种底层.html">
+            
+                    
+                    各种底层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../常见封装/简单逻辑.html">
+            
+                <a href="../常见封装/简单逻辑.html">
+            
+                    
+                    简单逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../随手记/">
+            
+                <a href="../随手记/">
+            
+                    
+                    随手记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../随手记/杂七杂八.html">
+            
+                <a href="../随手记/杂七杂八.html">
+            
+                    
+                    杂七杂八
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../随手记/常见问题.html">
+            
+                <a href="../随手记/常见问题.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../移动web/">
+            
+                <a href="../移动web/">
+            
+                    
+                    移动web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../移动web/常见兼容性问题.html">
+            
+                <a href="../移动web/常见兼容性问题.html">
+            
+                    
+                    常见兼容性问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../移动web/基础知识点.html">
+            
+                <a href="../移动web/基础知识点.html">
+            
+                    
+                    基础知识点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../移动web/移动端适配方案.html">
+            
+                <a href="../移动web/移动端适配方案.html">
+            
+                    
+                    移动端适配方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../h5c3/">
+            
+                <a href="../h5c3/">
+            
+                    
+                    h5c3
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../h5c3/canvas.html">
+            
+                <a href="../h5c3/canvas.html">
+            
+                    
+                    canvas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../h5c3/基础.html">
+            
+                <a href="../h5c3/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../h5c3/实例.html">
+            
+                <a href="../h5c3/实例.html">
+            
+                    
+                    实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../常用工具/">
+            
+                <a href="../常用工具/">
+            
+                    
+                    常用工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../常用工具/git.html">
+            
+                <a href="../常用工具/git.html">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../常用工具/gulp.html">
+            
+                <a href="../常用工具/gulp.html">
+            
+                    
+                    gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../常用工具/npm&&yarn.html">
+            
+                <a href="../常用工具/npm&&yarn.html">
+            
+                    
+                    npm&&yarn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../常用工具/webpack.html">
+            
+                <a href="../常用工具/webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../微信小程序/">
+            
+                <a href="../微信小程序/">
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../微信小程序/基础.html">
+            
+                <a href="../微信小程序/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../php基础语法/">
+            
+                <a href="../php基础语法/">
+            
+                    
+                    php基础语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../php基础语法/基础.html">
+            
+                <a href="../php基础语法/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../jquery总结/">
+            
+                <a href="../jquery总结/">
+            
+                    
+                    jquery总结
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../jquery总结/常用api.html">
+            
+                <a href="../jquery总结/常用api.html">
+            
+                    
+                    常用api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../预处理语言/">
+            
+                <a href="../预处理语言/">
+            
+                    
+                    预处理语言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../预处理语言/less.html">
+            
+                <a href="../预处理语言/less.html">
+            
+                    
+                    less
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../原生js/">
+            
+                <a href="../原生js/">
+            
+                    
+                    原生js
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../原生js/ajax.html">
+            
+                <a href="../原生js/ajax.html">
+            
+                    
+                    ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../原生js/cookie.html">
+            
+                <a href="../原生js/cookie.html">
+            
+                    
+                    cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../原生js/基础.html">
+            
+                <a href="../原生js/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../原生js/跨域.html">
+            
+                <a href="../原生js/跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >vue常见问题及解决方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="vue&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;">vue&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</h3>
+<h4 id="vue&#x4E2D;router-link&#x4E0D;&#x80FD;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x539F;&#x56E0;&#x53CA;&#x89E3;&#x51B3;&#x529E;&#x6CD5;">vue&#x4E2D;router-link&#x4E0D;&#x80FD;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x539F;&#x56E0;&#x53CA;&#x89E3;&#x51B3;&#x529E;&#x6CD5;</h4>
+<p>router-link&#x8BBE;&#x8BA1;&#x5355;&#x7EAF;&#x4E3A;&#x4E86;&#x8DF3;&#x8F6C;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;
+<code>@click.native=&quot;check&quot;</code> &#x52A0;<code>.native</code>&#x628A;router-link&#x6539;&#x56DE;&#x539F;&#x751F;a&#x6807;&#x7B7E;</p>
+<h4 id="keep-alive&#x7EC4;&#x4EF6;">keep-alive&#x7EC4;&#x4EF6;</h4>
+<p>&#x662F;Vue&#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#xFF0C;&#x80FD;&#x5728;&#x7EC4;&#x4EF6;&#x5207;&#x6362;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06;&#x72B6;&#x6001;&#x4FDD;&#x7559;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x6E32;&#x67D3;DOM &#x7528;&#x8BE5;&#x7EC4;&#x4EF6;&#x5305;&#x88F9;&#x6839;&#x7EC4;&#x4EF6;router-view&#x4EE5;&#x51CF;&#x5C11;&#x6E32;&#x67D3;&#x6B21;&#x6570;</p>
+<h4 id="vue-&#x767B;&#x5F55;&#x9875;&#x9762;&#x5236;&#x4F5C;">vue &#x767B;&#x5F55;&#x9875;&#x9762;&#x5236;&#x4F5C;</h4>
+<p>&#x5224;&#x65AD;&#x5BC6;&#x7801;&#x8BBE;&#x7F6E;cookie&#xFF0C;&#x7528;<code>$router.push(&apos;/&apos;)</code>&#x65B9;&#x6CD5;&#x5B9A;&#x5411;&#x8DEF;&#x7531;</p>
+<blockquote>
+<p>&#x8DEF;&#x7531;&#x4E0D;&#x5FC5;&#x987B;&#x653E;&#x5728;router-link&#x4E2D;</p>
+</blockquote>
+<h4 id="vue&#x4E4B;&#x95F4;&#x7684;&#x5144;&#x5F1F;&#x4F20;&#x503C;-event-bus">vue&#x4E4B;&#x95F4;&#x7684;&#x5144;&#x5F1F;&#x4F20;&#x503C; event bus</h4>
+<blockquote>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x505C;&#x7559; &#x4E0D;&#x65B9;&#x4FBF;&#x8FDB;&#x884C;&#x5B58;&#x53D6;&#x64CD;&#x4F5C;, &#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x503C;&#x7684;&#x642C;&#x8FD0;&#x5DE5;</p>
+</blockquote>
+<ul>
+<li>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;vue&#x5BF9;&#x8C61; &#x4F8B;&#x5982;&#x53D6;&#x540D;&#x4E3A;transfer.js,<strong>&#x4F5C;&#x4E3A;&#x7EC4;&#x4EF6;&#x95F4;&#x503C;&#x7684;&#x4E2D;&#x8F6C;&#x7AD9;</strong> &#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> vue
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>  <span class="hljs-keyword">new</span> vue
+</code></pre>
+<ul>
+<li><p>&#x7136;&#x540E;&#x518D;&#x53D1;&#x9001;&#x7EC4;&#x4EF6;&#x4E2D;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//1.0 &#x5BFC;&#x5165;&#x4E2D;&#x8F6C;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">import</span>  transfer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../transfer.js&apos;</span>
+<span class="hljs-comment">//2.0 &#x5728;&#x6B64;&#x5047;&#x8BBE;&#x6709;&#x4E2A;&#x4E8B;&#x4EF6; &#x4F5C;&#x4E3A;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x4E8B;&#x4EF6; </span>
+sendMsg(){
+ transfer.$emit(<span class="hljs-string">&quot;&#x8981;&#x4F20;&#x7684;&#x503C;&#x7684;key&quot;</span>,<span class="hljs-string">&quot;&#x8981;&#x4F20;&#x7684;value&quot;</span>)
+}
+</code></pre>
+</li>
+<li><p>&#x6700;&#x540E;&#x5728;&#x63A5;&#x53D7;&#x7EC4;&#x4EF6;&#x4E2D;</p>
+</li>
+</ul>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// 1.0 &#x5BFC;&#x5165;&#x4E2D;&#x8F6C;&#x7AD9;&#x5BF9;&#x8C61;</span>
+ <span class="hljs-keyword">import</span>  transfer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../transfer.js&apos;</span>
+
+<span class="hljs-comment">// &#x63A5;&#x53D7;&#x6570;&#x636E;</span>
+ mounted(){   <span class="hljs-comment">//</span>
+  transfer.$on(<span class="hljs-string">&quot;&#x4F20;&#x6765;&#x7684;&#x503C;&#x7684;key&quot;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>{
+       <span class="hljs-comment">//res&#x5C31;&#x662F;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x503C;</span>
+    })
+ }
+</code></pre>
+<h4 id="vue-history&#x6A21;&#x5F0F;">vue history&#x6A21;&#x5F0F;</h4>
+<h4 id="&#x767B;&#x5F55;&#x4EE3;&#x7801;">&#x767B;&#x5F55;&#x4EE3;&#x7801;</h4>
+<pre><code class="lang-js">router.beforeEach((to,<span class="hljs-keyword">from</span>,next) =&gt; {
+    <span class="hljs-keyword">if</span>(to.meta.requiresAuth){
+        <span class="hljs-keyword">if</span>(sessionStorage.getItem(<span class="hljs-string">&apos;local_key&apos;</span>) == <span class="hljs-literal">null</span>){
+            alert(<span class="hljs-string">&apos;&#x8BF7;&#x5148;&#x767B;&#x5F55;...&apos;</span>)
+            next({path : <span class="hljs-string">&apos;/login&apos;</span>})
+        }<span class="hljs-keyword">else</span>{
+            next();
+        }
+    }<span class="hljs-keyword">else</span>{
+        next();
+    }
+})
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="vuex.html" class="navigation navigation-prev " aria-label="Previous page: vuex">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../常见封装/" class="navigation navigation-next " aria-label="Next page: 常见封装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"vue常见问题及解决方法","level":"1.3.4","depth":2,"next":{"title":"常见封装","level":"1.4","depth":1,"path":"常见封装/README.md","ref":"./常见封装/README.md","articles":[{"title":"各种底层","level":"1.4.1","depth":2,"path":"常见封装/各种底层.md","ref":"./常见封装/各种底层.md","articles":[]},{"title":"简单逻辑","level":"1.4.2","depth":2,"path":"常见封装/简单逻辑.md","ref":"./常见封装/简单逻辑.md","articles":[]}]},"previous":{"title":"vuex","level":"1.3.3","depth":2,"path":"vue/vuex.md","ref":"./vue/vuex.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/vue常见问题及解决方法.md","mtime":"2017-11-16T08:58:44.680Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-26T14:24:14.396Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
