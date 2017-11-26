@@ -51,10 +51,98 @@
         })
 ```
 
-#### 修饰符
--  lazy     vue中取代input的change事件;
--  number   自动转化为数字;
--  trim     自动去掉首尾的空格;
+#### 修饰符(为了让methods更专注于纯粹的逻辑，少关注dom事件细节)
+- v-model事件修饰符
+    + `lazy`  vue中取代input的change事件;
+    + `number` 自动转化为数字（当输入内容为字符串时类型将不会发生变化）;
+    + `trim` 自动去掉首尾的空格;
+
+- v-on事件修饰符 
+    + `.stop` 阻止事件冒泡（等同于` event.stopPropagation() ` 方法）
+    + `.prevent` 阻止浏览器默认行为（等同于`event.preventDefault()`）
+    + `.self` 只有当事件绑定元素本身触发时才会触发（等同于`event.target()`方法）
+    + `.once` 绑定的事件只会触发一次
+    + `.native` 监听组件根元素的原生事件。
+
+> 修饰符可以串联写 `<a v-on:click.stop.prevent="doThat"></a>`
+
+- 按键修饰符
+    + `.keycode` 监听键盘按键 `<input v-on:keyup.13="submit">`
+
+> 修饰符可以使用别名 规定的别名有 `.enter .tab .delete（捕获删除和空格） .esc .space .up .down .left .right`
+> 可以通过`config.keyCodes`来自定义按键修饰符别名 `vue.config.keyCodes.hh = 112`
+
+**1.0.8+ 支持单字母按键别名。**
+
+```js
+    <input type="text" v-model="name" @keydown.f2='add'>
+    Vue.directive('on').keyCodes.f2 = 113;
+```
+
+> 在1.0中按键修饰符存储在Vue.directive('on').keyCodes 中
+> 在2.0中按键修饰符存储在Vue.config.keyCodes 中
+
+- 系统修饰符（相当于添加组合键）
+    + `.ctrl`
+    + `.alt`
+    + `.shift`
+    + `.meta` 在windows中相当于window键（徽标键）
+
+```html
+<!-- alt+c -->
+<input @keyup.alt.67='hello'>
+<!-- alt+click -->
+<input @click.alt = 'hello'>
+```
+
+- `.exact` 搭配其他系统修饰符一起使用，用于精确定位某一修饰符（用于解决点击系统修饰符时如果点到了其他修饰符，系统修饰符也会产生作用的问题）
+
+```html
+<!-- 点击到Ctrl或shift时alt修饰符也会生效 -->
+<input @keyup.alt.67='hello'>
+<!-- 只有点击到alt+c时修饰符才会起作用 -->
+<input @keyup.alt.67.exact='hello'>
+```
+
+- 鼠标修饰符(这些修饰符会限制回调函数响应鼠标按钮)
+    + `.left` 
+    + `.right` 
+    + `.middle` 
+- `.sync` 修饰符在2.x中用做于编译的语法糖，被扩展为一个自动更新父组件属性`v-on`的监听器
+
+```html
+<!-- 原代码 -->
+<comp :foo.sync='bar'></comp>
+<!-- 扩展之后的代码 -->
+<comp :foo='bar' @update:foo='val=>bar = val'></comp>
+<!-- 需要显示触发一个更新事件 -->
+this.$emit('update:foo',newValue)
+```
+
+#### directive自定义指令
+
+```js
+    <input type="text" v-focus placeholder="筛选内容" v-model='sname'>
+    Vue.directive('focus', function () {
+        var p = this.el;
+        // 此处的this指代的是Vue.directive(...)整体;而this.el指的是调用v-focus的元素,此处为<input type="text" placeholder="筛选内容">;
+        p.focus();
+    })
+    // focus在vue中,某些浏览器不能使用;
+```
+
+#### directive自定义指令
+
+```js
+    <input type="text" v-color='txtcolor' placeholder="筛选内容" v-model='sname'>
+    Vue.directive('color', function () {
+        this.el.style.color = this.vm[this.expression]
+//        this    =>当前自定义指令
+//        this.vm     =>当前指令所在的区间
+//        this.expression =>当前自定义指令的属性值
+    })
+    var vm = new Vue({...});
+```
 
 #### v-bind 可以动态的给html元素或vue组件绑定特性
 
@@ -123,19 +211,6 @@
 
 >   注:调用函数没有形参时,可省略调用后面的括号
 
-#### v-on提供许多事件修饰符来辅助一些功能(v-on:可省略成 @ )
-
-
-- .prevent event.preventDefault();
-- .stop    event.stopPropagation();
-`<button @click.stop.prevent="doThis"></button`>
-
->   注:此处.stop.prevent为串联修饰符
-
-- .capture - 添加事件侦听器时使用 capture 模式。
-- .self - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
-- .{keyCode | keyAlias} - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
-- .native - 监听组件根元素的原生事件。
 
 #### confirm(感觉类似与alert的用法)
 ```js
@@ -193,63 +268,6 @@
             res = year +'-' + month +'-'+ day;
             return res;
      $$
-```
-
-#### v-on的按键修饰符
-
-```html
-    <input type="text" v-model="name" @keydown.enter='add'>
-```
-
-#### 自定义v-on的按键修饰符(1.0版本)
-
-- enter
-- tab
-- delete (捕获 “删除” 和 “退格” 键)
-- esc
-- space
-- up
-- down
-- left
-- right
-**1.0.8+ 支持单字母按键别名。**
-
-```js
-    <input type="text" v-model="name" @keydown.f2='add'>
-    Vue.directive('on').keyCodes.f2 = 113;
-```
->   注: 在1.0中按键修饰符存储在Vue.directive('on').keyCodes 中
->       在2.0中按键修饰符存储在Vue.config.keyCodes 中
-
-#### 自定义v-on的按键修饰符(2.0版本)
-
-```js
-    <input type="text" v-model="name" @keydown.113='add'>
-```
-
-#### directive自定义指令
-
-```js
-    <input type="text" v-focus placeholder="筛选内容" v-model='sname'>
-    Vue.directive('focus', function () {
-        var p = this.el;
-        // 此处的this指代的是Vue.directive(...)整体;而this.el指的是调用v-focus的元素,此处为<input type="text" placeholder="筛选内容">;
-        p.focus();
-    })
-    // focus在vue中,某些浏览器不能使用;
-```
-
-#### directive自定义指令
-
-```js
-    <input type="text" v-color='txtcolor' placeholder="筛选内容" v-model='sname'>
-    Vue.directive('color', function () {
-        this.el.style.color = this.vm[this.expression]
-//        this    =>当前自定义指令
-//        this.vm     =>当前指令所在的区间
-//        this.expression =>当前自定义指令的属性值
-    })
-    var vm = new Vue({...});
 ```
 
 #### v-resource中get (vue通过vue-resource来实现与后台进行交互的);
