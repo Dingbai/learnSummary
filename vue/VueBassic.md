@@ -53,9 +53,9 @@
 
 #### 修饰符(为了让methods更专注于纯粹的逻辑，少关注dom事件细节)
 - v-model事件修饰符
-    + `lazy`  vue中取代input的change事件;
-    + `number` 自动转化为数字（当输入内容为字符串时类型将不会发生变化）;
-    + `trim` 自动去掉首尾的空格;
+    + `.lazy`  vue中将默认的`input`事件改为`change`事件（在change事件中而不是在input事件中触发）
+    + `.number` 自动转化为数字（当输入内容为字符串时类型将不会发生变化）;
+    + `.trim` 自动去掉首尾的空格;
 
 - v-on事件修饰符 
     + `.stop` 阻止事件冒泡（等同于` event.stopPropagation() ` 方法）
