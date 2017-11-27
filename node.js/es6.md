@@ -38,6 +38,33 @@ module.exports = exports = {}
 ```
 #### exports 和 module exports区别
 - exports是modul exports的底层实现
+#### Array.from()
+- 将对象转换成数组的方法
+#### 数据结构Set
+**Set 类似于数组但是成员都是唯一的没有重复的值**
+- `Set` 本身是个构造函数，用来生成`Set`数据结构
+##### Set的实例属性和方法
+- 属性
+    + Set.prototype.contructor 构造函数
+    + Set.prototype.size 返回Set的成员总数
+- 操作方法
+    + add(value) 添加
+    + has(value) 判断 返回Boolean 表示操作是否成功
+    + delete(value) 删除某个值 返回Boolean 表示操作是否成功
+    + clear() 清楚所有值
+
+```js
+// 根据Set中成员都是唯一的特性，Set可以用来数组去重
+//写法1
+[...new Set([2,8,9,1,1,8])]
+//写法2
+function transfer(array){
+    return Array.from(new Set(array))
+}
+transfer([2,8,9,1,1,8])
+```
+
+> Set 内部判断值是否相等的算法是'Same-value equality'类似于精确(全等)运算符`===`精确运算符认为NaN不能等于NaN
 
 ##### 解构
 - 数组解构
