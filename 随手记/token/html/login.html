@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户</title>
+</head>
+<body>
+    <div>
+        昵称：<span class="nickname"></span>
+        <p></p>
+        年龄：<span class="age"></span>
+        <p></p>
+        性别：<span class="sexy"></span>
+        <p></p>
+        爱好：<span class="intel"></span>
+        <p></p>
+    </div>
+    <div class="login">
+        username: <input type="text" class="uname" value="">
+        <p></p>
+        password: <input type="text" class="pwd" value="">
+        <p></p>
+        <input class="sub" type="button" value="提交">
+    </div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    //listen
+    $('.sub').on('click',function(){
+        var user = getUser();
+        sendUser(user);
+    })
+
+    //获取用户名密码
+    function getUser(){
+        var userobj = {
+            uname:$('.uname').val(),
+            pwd:$('.pwd').val(),
+        }
+        return userobj;
+    }
+
+    //发送用户名密码
+    function sendUser(user){
+        $.ajax({
+            url:'/loginAction',
+            type:'POST',
+            data:user,
+            success:function(data){
+                //
+                var pageObj = getUserData(data);
+                //根据返回做步骤
+                setPage(pageObj);
+                setCookie(data);
+            }
+        })
+    }
+
+    //得到用户数据
+    function getUserData(data){
+        var pageObj = {
+            nickname:data.nickname,
+            age:data.age,
+            sexy:data.sexy,
+            intel:data.intel
+        }
+        return pageObj;
+    }
+
+    //渲染页面
+    function setPage(pageObj){
+        var bool;
+        if(pageObj){
+            $('.nickname').html(pageObj.nickname);
+            $('.age').html(pageObj.age);
+            $('.sexy').html(pageObj.sexy);
+            $('.intel').html(pageObj.intel);
+            bool = true;
+        }else{
+            bool = false;
+        }
+        return bool;
+    }
+    //存放在cookie
+    function setCookie(data){
+        $.cookie('token',data.token);
+    }
+</script>
+</body>
+</html>
