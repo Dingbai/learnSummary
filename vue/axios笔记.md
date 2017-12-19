@@ -9,9 +9,10 @@
 #### 2、使用方式：
 
 - `script` 导入： `<script src="https://unpkg.com/axios/dist/axios.min.js"></script>` 
-- `npm` 安装：`npm install axios` `npm install vue-axios`
+- `npm` 安装： `npm install vue-axios` **vue-axios是axios的插件可以用use的方法导入**
 - `import Axios from 'axios'`; `import VueAxios from 'vue-axios'`;
 - `Vue.use(VueAxios,Axios)`;
+> 如果 `npm i axios` 直接安装axios 不能用use方法导入要用`Vue.prototype.$http = axios` 形式
 
 #### 3、注意点：
 
@@ -68,4 +69,26 @@
     HTTP.get('slides').then((res) => {
         this.list = res.data;
     })
+```
+
+#### 6.配置请求头
+
+```js
+//http.js
+import axios from 'axios'
+
+export const httpInstance = axios.create({
+    baseURL: 'http://api.feigo.test/',
+    timeout: 1000,//请求超过1s就会被中断
+    headers: {
+        'Accept':'application/json',
+        'token':'ee95o+QIh/uZJulfNx8wozAYj+fqv+q7/MT16bHRd1zX2lxMKczjZD5dDAkTY09TU/3gsXc5eYo'
+    },
+})
+//main.js
+import axios from 'axios'
+Vue.prototype.$http = axios
+//引入token
+import {httpInstance} from './config/http'
+Vue.prototype.http = httpInstance;
 ```
