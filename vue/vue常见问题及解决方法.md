@@ -69,3 +69,15 @@ router.beforeEach((to,from,next) => {
     }
 })
 ```
+
+#### 在手机端调用调试工具
+
+```js
+//在app.vue中加入
+created(){
+  const script = document.createElement('script');
+  script.src = '//cdn.jsdelivr.net/npm/eruda';
+  document.body.appendChild(script);
+  script.onload = function () { window.eruda.init({tool: ['elements', 'console', 'network', 'sources']}) }
+},
+```
