@@ -36,6 +36,7 @@
   * [基础](./php基础语法/基础.md)
 * [jquery总结](./jquery总结/README.md)
   * [常用api](./jquery总结/常用api.md)
+  * [jquery源码](./jquery总结/jquery源码.md)
 * [预处理语言](./预处理语言/README.md)
   * [less](./预处理语言/less.md)
 * [原生js](./原生js/README.md)
