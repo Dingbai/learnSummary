@@ -46,3 +46,28 @@ fn().name//undefine，因为init中没有name属性
 fn.prototype.init.prototype = fn.prototype;
 fn().name//zhangsan
 ```
+### (二)链式调用
+**核心:扩展原型，将要调用的函数当做jquery实例的原型方法然后返回的this就会指向jquery实例**
+```js
+f.name().sing()//想要实现
+let fn = function (){
+    context...
+}
+fn.prototype = {
+    name:function(){
+        console.log(1)
+        return this;
+    },
+    sing:function(){
+        console.log(2)
+        return this;
+    }
+}
+let f = new fn();
+f.name().sing()//1,2
+//缺点，函数必须有返回值否则断链
+```
+### (三)接口扩展
+- `jquery.extend` 对jquery函数本身进行扩展
+- `jquery.fn.extend` 对jquery.fn进行扩展
+> `jquery.fn = jquery.prototype`  相当于同种方法的不同引用
