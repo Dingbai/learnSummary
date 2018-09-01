@@ -7,7 +7,7 @@ P(rocess)M(anager)2是node进程管理工具，可以利用它来简化很多nod
 `npm install pm2 -g`
 #### pm2 用法
 1. 启动应用 `pm2 start app.js`
-  > `--watch` 监听应用目录的变化，一旦发生变化，自动重启
+    > `--watch` 监听应用目录的变化，一旦发生变化，自动重启
 2. 列出所有应用 `pm2 list`
 3. 停止应用 `pm2 stop     <app_name|id|'all'|json_conf>`
 4. 重启应用 `pm2 restart  <app_name|id|'all'|json_conf>`
