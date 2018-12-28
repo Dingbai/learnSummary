@@ -53,7 +53,7 @@
 - `git reset --hard Head~1`
     + 表示回退到上上次代码提交时的状态
 
-- `git reset --hard [版本号]`
+- `git reset --hard 版本号`
     + 可以通过版本号精确的回退到某一次提交时的状态
 
 - `git reflog`
